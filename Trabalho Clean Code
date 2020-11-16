@@ -1,4 +1,4 @@
-
+NOMES: Luiz Eduardo Hackbart e Gustavo Luiz da Silva
 
 
 Nomes Significativos
@@ -7,7 +7,9 @@ Tudo em nossos códigos tem um nome, por isso escolha bem e não saia dando nome
 
 Use nomes que revelem seu propósito 
 
-Os nomes dados as variáveis, funções e classes devem ser explicativos, de forma que ao ler o código já saibamos para que serve, evitando comentários para explicar o código.
+Os nomes dados as variáveis, funções e classes devem ser explicativos, de forma que ao ler o código já 
+saibamos para que serve, evitando comentários para explicar o código.
+
 Variáveis como: essas devem ser evitadas, pois não dão a mínima ideia do que fazem ou de onde usa-las
 
 Int count;
@@ -16,14 +18,18 @@ Int d;
 Int m1;
 
 Podem ser citados como exemplo de bons nomes como:
+
 Int tempoDecorridoEmDias;
 String nomeCopletoDoCliente;
 Int diasDesdeCriacao;
 
 Ao ler já é perceptível o propósito da variável
 
+
 Por exemplo tente ler e dizer para que serve esse código:
+
 Você diria que é um pedaço de código de um jogo campo minado?
+
 public List<int[]> getThem(){
 		List<int[]> list1 = new ArrayList<int[]>();
 		for (int[] x : theList)
@@ -38,25 +44,34 @@ Acho que não?
 Mas se reformularmos esse código e mudarmos os nomes
 
 public List<Casa> getMarcarCasas (){
-		List<Casa> marcarCasas = new arrayList<Casa>();
-		for (Casa casa : tabuleiro())
-			marcarCasas.add(casa);
-		return marcarCasas;}
-	}}}
+	List<Casa> marcarCasas = new arrayList<Casa>();
+	for (Casa casa : tabuleiro())
+		marcarCasas.add(casa);
+	return marcarCasas;}
+}}}
+	
 Já é muito mais fácil de interpreta-lo.
+
 
 É importante evitar usar palavras muito parecidas como por exemplo esses módulos:
 
- (controlador para manuseio eficiente de Strings) 
- (controlador para armazenamento eficiente de Strings)
+ controladorParaManuseioEficienteDeStrings
+ controladorParaArmazenamentoEficienteDeStrings
 
 Pois hoje os ambientes de desenvolvimento contam com a facilidade da alto completar palavras, e se os nomes forem muito parecidos pode geral confusão no código.
 
-É importante usar nomes pronunciáveis pois a programação é uma atividade social, por exemplo quando você estiver discutindo som um colega de trabelho sobre um código e falam da variável
-genymdhms (generetion, date, year, month, day, hour, minute e second) 
-Todos vão parecer idiotas enquanto discutem, e isso é evitado simplesmente com um nome melhor como generationTimestamp
+É importante usar nomes pronunciáveis pois a programação é uma atividade social,
+por exemplo quando você estiver discutindo som um colega de trabelho sobre um código e falam da variável
 
-Usar nomes passíveis de busca por exemplo se tiver uma variável com o nome de “e” se perderia muito facilmente em meio ao código, seria mais difícil o entendimento se fosse um nome longo que se sobressai entre meio ao código, por exemplo comparando os dos códigos a baixo 
+genymdhms (generetion, date, year, month, day, hour, minute e second) 
+
+Todos vão parecer idiotas enquanto discutem, e isso é evitado simplesmente
+com um nome melhor como "generationTimestamp"
+
+Usar nomes passíveis de busca por exemplo se tiver uma variável com o nome de “e”,
+se perderia muito facilmente em meio ao código, seria mais difícil o entendimento se
+fosse um nome longo que se sobressai entre meio ao código, por exemplo comparando os dos códigos a baixo 
+
 for (int j = 0; j<34; j++) {
 		s += (t[j]*4)/5;
 
@@ -64,52 +79,64 @@ int DiasReaisPorDiaIdeal = 4;
 	const int DIAS_DE_TRABALHO_POR_SEMANA = 5;
 	int sum = 0;
 	for (int j=0; j < NÚMERO_DE_TAREFAS; J++) {
-int diasTrabalhados = estimativaDeTarefa[j] * DiasReaisPorDiaIdeal;
+		int diasTrabalhados = estimativaDeTarefa[j] * DiasReaisPorDiaIdeal;
 
-	int semanasTrabalhados = (diasReais / DIAS_DE_TRABALHO_POR_SEMANA);
-	sum += semanasDeTarefasReais;
+		int semanasTrabalhados = (diasReais / DIAS_DE_TRABALHO_POR_SEMANA);
+		sum += semanasDeTarefasReais;
 
 	}
 
-São códigos que fazem a mesma coisa, porém o segundo é muito mais legível. Não necessariamente é mais rápido ou mais fácil de ser feito, porem o entendimento do código por quem precisar lê-lo será muito mais fácil. 
+São códigos que fazem a mesma coisa, porém o segundo é muito mais legível.
+Não necessariamente é mais rápido ou mais fácil de ser feito, porem o entendimento
+do código por quem precisar lê-lo será muito mais fácil. 
 
 
-Evite codificações no seu código, o uso de nomes que só você sabe o que significa é antiprofissional, pois isso só trará problemas para outras pessoas que precisarem ler seu código.
+Evite codificações no seu código, o uso de nomes que só você sabe o que significa é antiprofissional,
+pois isso só trará problemas para outras pessoas que precisarem ler seu código.
 
-Foi-se o tempo em que os programadores tinham que abreviar nomes de variáveis por limitações de hardware, então hoje temos o privilegio e a obrigação de criar bons nomes sem ter que economizar palavras.
+Foi-se o tempo em que os programadores tinham que abreviar nomes de variáveis por limitações de hardware,
+então hoje temos o privilegio e a obrigação de criar bons nomes sem ter que economizar palavras.
  
 
-	Classes devem ter nomes com substantivos, como Cliente, Conta, AnaliseEndereco, deve-se evitar nomes como Gerente, Processador ou Info, e também deve-se evitar verbos.
+Classes devem ter nomes com substantivos, como Cliente, Conta, AnaliseEndereco,
+deve-se evitar nomes como Gerente, Processador ou Info, e também deve-se evitar verbos.
 
 private int Conta;
 private String Cliente;
 private String AnaliseEndereco;
 
 
-	Os nomes de métodos devem ter verbos como postarPagemento, excluirPagina, e seus métodos de acesso devem ter como prefixo get, set ou is.
+Os nomes de métodos devem ter verbos como postarPagemento, excluirPagina, e seus métodos de acesso devem ter como prefixo get, set ou is.
 
-public String getPostaPagamento() {
+	public String getPostaPagamento() {
 		return PostaPagemento;
 	}
 
-public void setPostaPagemento(String agencia) {
-	this. PostaPagemento = agencia;
+	public void setPostaPagemento(String agencia) {
+		this. PostaPagemento = agencia;
 
-if (contracheque.isPostado())...
+	if (contracheque.isPostado())...
 
 
 
 	
-	Não use gírias ou piadas como nomes de variáveis, seja profissional e crie nomes com clareza, um nome que queira dizer exatamente o que faz. 
+Não use gírias ou piadas como nomes de variáveis, seja profissional e crie nomes com clareza,
+um nome que queira dizer exatamente o que faz. 
 
 
 Selecione uma palavra por conceito 
 
 	
-Deve-se evitar palavra iguais para dois propósitos, por exemplo, se temos muitas classes com add que criara um novo por meio da adição e concatenação de dois valores existentes, agora digamos que estamos criando uma nova classe que contenha um método que coloque seu único parâmetro em uma coleção, por conta da semântica ser diferente é mais adequado não usarmos add novamente e sim usar inserir ou adicionar.
+Deve-se evitar palavra iguais para dois propósitos, por exemplo, se temos muitas classes com add
+que criara um novo por meio da adição e concatenação de dois valores existentes,
+agora digamos que estamos criando uma nova classe que contenha um método que
+coloque seu único parâmetro em uma coleção, por conta da semântica ser diferente
+é mais adequado não usarmos add novamente e sim usar inserir ou adicionar.
 
 
-Use nomes que deem um contexto significativos a uma função, usar nomes que façam parte do contexto para o leitor, ou até mesmo usar prefixos nos nomes, como lastName, street, ou com prefixo addLastName e addStreet
+Use nomes que deem um contexto significativos a uma função, usar nomes que
+façam parte do contexto para o leitor, ou até mesmo usar prefixos nos nomes,
+como lastName, street, ou com prefixo addLastName e addStreet
 
 
 
@@ -117,39 +144,65 @@ FUNÇÕES
 
 A primeira regra para funções é que elas devem ser pequenas
 
-Aqui quero dizer que blocos dentro de instruções if, else, while e outros devem ter apenas uma linha. Possivelmente uma chamada de função. Além de manter a função pequena, isso adiciona um valor significativo, pois a função chamada de dentro do bloco pode receber um nome descritivo. Isso também implica que as funções não devem ser grandes e ter estruturas alinhadas.  
+Aqui quero dizer que blocos dentro de instruções if, else, while e outros devem ter apenas uma linha.
+Possivelmente uma chamada de função. Além de manter a função pequena, isso adiciona um valor significativo,
+pois a função chamada de dentro do bloco pode receber um nome descritivo.
+Isso também implica que as funções não devem ser grandes e ter estruturas alinhadas.  
 
-Queremos que o código seja lido de cima para baixo, como uma narrativa. Desejamos que cada função seja seguida pelas outras no próximo nível de modo que possamos ler o programa descendo um nível de cada vez conforme percorremos a lista de funções. Chamamos isso de Regra Decrescente.
+Queremos que o código seja lido de cima para baixo, como uma narrativa.
+Desejamos que cada função seja seguida pelas outras no próximo nível de modo que
+possamos ler o programa descendo um nível de cada vez conforme percorremos a lista de funções.
+Chamamos isso de Regra Decrescente.
 
 ESTRUTURA SWITCH
 
-É difícil criar uma estrutura switch pequenas, pois mesmo uma com apenas dois cases é maior do que eu gostaria que fosse um bloco ou uma função. Também é difícil construir uma que fala apenas uma coisa. Por padrão, as estruturas switch sempre fazem N coisas. Infelizmente, nem sempre conseguimos evitar o uso do switch
+É difícil criar uma estrutura switch pequenas, pois mesmo uma com apenas dois cases
+é maior do que eu gostaria que fosse um bloco ou uma função.
+Também é difícil construir uma que fala apenas uma coisa.
+Por padrão, as estruturas switch sempre fazem N coisas.
+Infelizmente, nem sempre conseguimos evitar o uso do switch
 
 USE NOMES DESCRITIVOS
 
 Pois descreve o que a função faz
-Não tenha medo de criar nomes extensos, pois eles são melhores do que um pequeno e enigmático. Um nome longo e descritivo é melhor do que um comentário extenso e descritivo. Use uma convenção de nomenclatura que possibilite uma fácil leitura de nomes de funções com várias palavras e, então, use estas para dar à função um nome que explique o que ela faz.
+Não tenha medo de criar nomes extensos, pois eles são melhores do que um pequeno e enigmático.
+Um nome longo e descritivo é melhor do que um comentário extenso e descritivo.
+Use uma convenção de nomenclatura que possibilite uma fácil leitura de nomes de funções
+com várias palavras e, então, use estas para dar à função um nome que explique o que ela faz.
 
 PARÂMETROS DE FUNÇÕES
-A quantidade ideal de parâmetros para uma função é zero (nulo). Depois vem um, seguido de dois (díade). Sempre que possível devem-se evitar três parâmetros (tríade). Para mais de três deve-se ter um motivo muito especial. Parâmetros são complicados. Eles requerem bastante conceito.
+A quantidade ideal de parâmetros para uma função é zero (nulo).
+Depois vem um, seguido de dois (díade). Sempre que possível devem-se evitar três parâmetros (tríade).
+Para mais de três deve-se ter um motivo muito especial. Parâmetros são complicados. Eles requerem bastante conceito.
 
 
 PARÂMETROS LÓGICOS
 
-Esses parâmetros são feios. Passar um booleano para uma função certamente é uma prática honível, pois ele complica imediatamente a assinatura do método, mostrando explicitamente que a função faz mais de uma coisa. Ela faz uma coisa se o valor for verdadeiro, e outra se for falso!
+Esses parâmetros são feios. Passar um booleano para uma função certamente é uma prática honível,
+pois ele complica imediatamente a assinatura do método, mostrando explicitamente que a função faz mais de uma coisa.
+Ela faz uma coisa se o valor for verdadeiro, e outra se for falso!
 
 EVITE EFEITOS COLATERAIS
 
-Efeitos colaterais são mentiras. Sua função promete fazer apenas uma coisa, mas ela também faz outras coisas escondida. Às vezes, ela fará alterações inesperadas nas variáveis de sua própria classe. As vezes, ela adicionará as variáveis aos parâmetros passados à função ou às globais do sistema. Em ambos os casos elas são "verdades" enganosas e prejudiciais, que geralmente resultam em acoplamentos temporários estranhos e dependências.
+Efeitos colaterais são mentiras. Sua função promete fazer apenas uma coisa, mas ela também faz outras coisas escondida.
+Às vezes, ela fará alterações inesperadas nas variáveis de sua própria classe.
+As vezes, ela adicionará as variáveis aos parâmetros passados à função ou às globais do sistema.
+Em ambos os casos elas são "verdades" enganosas e prejudiciais, que geralmente resultam em acoplamentos temporários estranhos e dependências.
 
 EVITE REPETIÇÕES
 
-A duplicação é um problema, pois ela amontoa o código e serão necessárias quatro modificações se o algoritmo mudar. Além de serem quatro oportunidades
+A duplicação é um problema, pois ela amontoa o código e serão necessárias quatro modificações se o algoritmo mudar.
+Além de serem quatro oportunidades
 para a omissão de um erro.
-A duplicação pode ser a raiz de todo o mal no software. Muitos princípios e práticas têm sido criados com a finalidade de controlá-la ou eliminá-la.
+A duplicação pode ser a raiz de todo o mal no software.
+Muitos princípios e práticas têm sido criados com a finalidade de controlá-la ou eliminá-la.
 
 CONCLUSAO
-Cada sistema é construído a partir de uma linguagem específica a um domínio desenvolvida por programadores para descrever o sistema. As funções são os verbos dessa linguagem, e classes os substantivos. Isso não é um tipo de retomada da antiga noção de que substantivos e verbos nos requerimentos de um documento sejam os primeiros palpites das classes e funções de um sistema. Mas sim uma verdade muito mais antiga. A arte de programar é, e sempre foi, a arte do projeto de linguagem.
+Cada sistema é construído a partir de uma linguagem específica a um domínio desenvolvida
+por programadores para descrever o sistema. As funções são os verbos dessa linguagem,
+e classes os substantivos. Isso não é um tipo de retomada da antiga noção de que substantivos
+e verbos nos requerimentos de um documento sejam os primeiros palpites das classes e funções de um sistema.
+Mas sim uma verdade muito mais antiga. A arte de programar é, e sempre foi, a arte do projeto de linguagem.
 
 
 EXEMPLOS  
