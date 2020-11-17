@@ -144,36 +144,95 @@ FUNÇÕES
 
 A primeira regra para funções é que elas devem ser pequenas
 
+BLOCOS E IDENTAÇÃO 
+
 Aqui quero dizer que blocos dentro de instruções if, else, while e outros devem ter apenas uma linha.
 Possivelmente uma chamada de função. Além de manter a função pequena, isso adiciona um valor significativo,
 pois a função chamada de dentro do bloco pode receber um nome descritivo.
 Isso também implica que as funções não devem ser grandes e ter estruturas alinhadas.  
 
+
+Ex:    if (opção == 1) {
+              saque := ( Valor do saque )
+              if ( saldo >= saque) {
+                   saldo := (saldo - saque)
+                   fmt.Println(“saque realizado com sucesso”)
+                   fmt.Println (“seu saldo é”, saldo)
+              } else {
+                   print (“saldo inexistente”) 
+              }
+         } else if (opção == 2) {
+                deposito := (Valor de depósito)
+                     if(deposito > 0) {
+                           saldo := (deposito + saldo)
+                           fmt.Println ('deposito realizado com sucesso')
+                           fmt.Println ('seu saldo é', saldo)
+                     }
+         }
+
+
+
+
+Refatorando:
+if (opção == 1) {
+       Sacar() 
+} else if (opção == 2) {
+       Depositar()
+}
+
+
+
+ func Sacar() {
+      saque := ( Valor do saque )
+      if ( saldo >= saque) {
+            saldo := (saldo - saque)
+            fmt.Println(“saque realizado com sucesso”)
+            fmt.Println (“seu saldo é”, saldo)
+      } else {
+            print (“saldo inexistente”) 
+      }
+ }
+
+func Depositar() {
+deposito := (Valor de depósito)
+if(deposito > 0) {
+        saldo := (deposito + saldo)
+        fmt.Println ('deposito realizado com sucesso')
+        fmt.Println ('seu saldo é', saldo)
+}
+}
+
+
+LEITURA DO CÓDIGO
+
 Queremos que o código seja lido de cima para baixo, como uma narrativa.
-Desejamos que cada função seja seguida pelas outras no próximo nível de modo que
-possamos ler o programa descendo um nível de cada vez conforme percorremos a lista de funções.
+Desejamos que cada função seja seguida pelas outras no próximo nível de modo que possamos
+ler o programa descendo um nível de cada vez conforme percorremos a lista de funções.
 Chamamos isso de Regra Decrescente.
 
 ESTRUTURA SWITCH
 
 É difícil criar uma estrutura switch pequenas, pois mesmo uma com apenas dois cases
-é maior do que eu gostaria que fosse um bloco ou uma função.
-Também é difícil construir uma que fala apenas uma coisa.
-Por padrão, as estruturas switch sempre fazem N coisas.
-Infelizmente, nem sempre conseguimos evitar o uso do switch
+é maior do que eu gostaria que fosse um bloco ou uma função. Também é difícil construir uma que fala apenas uma coisa.
+Por padrão, as estruturas switch sempre fazem N coisas. Infelizmente, nem sempre conseguimos evitar o uso do switch
 
 USE NOMES DESCRITIVOS
 
 Pois descreve o que a função faz
 Não tenha medo de criar nomes extensos, pois eles são melhores do que um pequeno e enigmático.
 Um nome longo e descritivo é melhor do que um comentário extenso e descritivo.
-Use uma convenção de nomenclatura que possibilite uma fácil leitura de nomes de funções
-com várias palavras e, então, use estas para dar à função um nome que explique o que ela faz.
+Use uma convenção de nomenclatura que possibilite uma fácil leitura de nomes de funções com várias palavras e, então,
+use estas para dar à função um nome que explique o que ela faz.
+
+
+Ex: func HabDesabCposCab(Valor Boolean)
+      func HabilitarCabecalho(Valor Boolean)
+
 
 PARÂMETROS DE FUNÇÕES
-A quantidade ideal de parâmetros para uma função é zero (nulo).
-Depois vem um, seguido de dois (díade). Sempre que possível devem-se evitar três parâmetros (tríade).
-Para mais de três deve-se ter um motivo muito especial. Parâmetros são complicados. Eles requerem bastante conceito.
+A quantidade ideal de parâmetros para uma função é zero (nulo). Depois vem um, seguido de dois (díade).
+Sempre que possível devem-se evitar três parâmetros (tríade). Para mais de três deve-se ter um motivo muito especial.
+Parâmetros são complicados. Eles requerem bastante conceito.
 
 
 PARÂMETROS LÓGICOS
@@ -184,73 +243,19 @@ Ela faz uma coisa se o valor for verdadeiro, e outra se for falso!
 
 EVITE EFEITOS COLATERAIS
 
-Efeitos colaterais são mentiras. Sua função promete fazer apenas uma coisa, mas ela também faz outras coisas escondida.
-Às vezes, ela fará alterações inesperadas nas variáveis de sua própria classe.
+Efeitos colaterais são mentiras. Sua função promete fazer apenas uma coisa,
+mas ela também faz outras coisas escondida. Às vezes, ela fará alterações inesperadas nas variáveis de sua própria classe.
 As vezes, ela adicionará as variáveis aos parâmetros passados à função ou às globais do sistema.
 Em ambos os casos elas são "verdades" enganosas e prejudiciais, que geralmente resultam em acoplamentos temporários estranhos e dependências.
 
 EVITE REPETIÇÕES
 
-A duplicação é um problema, pois ela amontoa o código e serão necessárias quatro modificações se o algoritmo mudar.
-Além de serem quatro oportunidades
+A duplicação é um problema, pois ela amontoa o código e serão necessárias quatro
+modificações se o algoritmo mudar. Além de serem quatro oportunidades
 para a omissão de um erro.
-A duplicação pode ser a raiz de todo o mal no software.
-Muitos princípios e práticas têm sido criados com a finalidade de controlá-la ou eliminá-la.
+A duplicação pode ser a raiz de todo o mal no software. Muitos princípios e práticas têm
+sido criados com a finalidade de controlá-la ou eliminá-la.
 
-CONCLUSAO
-Cada sistema é construído a partir de uma linguagem específica a um domínio desenvolvida
-por programadores para descrever o sistema. As funções são os verbos dessa linguagem,
-e classes os substantivos. Isso não é um tipo de retomada da antiga noção de que substantivos
-e verbos nos requerimentos de um documento sejam os primeiros palpites das classes e funções de um sistema.
-Mas sim uma verdade muito mais antiga. A arte de programar é, e sempre foi, a arte do projeto de linguagem.
-
-
-EXEMPLOS  
-Forma Não correta
-func main(){
-StringSQL = "SELECT CODIGO_VEI FROM TB_VEICULO "
-StringSQL += " WHERE TRANSP_VEI= " + codigo
- result := SQLICampo(StringSQL)
-if result = 1 {
-    retunr "Veiculo X pertence a transportadora Y"
-      } 
-if result = 2{
-    return "Veiculo Y pertance a transportadora X"
-  } 
-if result = 3 {
-return "O veiculo não pertence a nenhuma transportadora"
-    } else {
-   return ""
-}
-}
-Forma mais correta
-func main(){
-    Veiculo := CarregarCodigoVeiculo(1)
-    if codigoVeiculo = 1 {
-        retunr "Veiculo X pertence a transportadora Y"
-    } 
-    if codigoVeiculo = 2{
-        return "Veiculo Y pertance a transportadora X"
-    }  
-    if codigoVeiculo = 3 {
-        return "O veiculo não pertence a nenhuma transportadora"
-    } else {
-       return "
-}
-
-func CarregarCodigoVeiculo(codigo int) int{
-
-    codigo := CarSQL("CODIGO_VEI","TB_VEICULO","TRANSP_VEI",codigo)
-    return codigo
-}
-
-func CarSQL(campo string, tabela string, campoFiltro string,filtro int) {
-    
-    StringSQL := "SELECT "+ campo +" FROM " + tabela + "
-    StringSQL += " WHERE " + campoFiltro " + " = " + filtro
-
-    retunr SQLXCampo(StrngSQL)
-}
 
 Função com o nome Errado  CarregarCodigoVeiculo seria o mais correto
 func CarCodVeic(Transportadora int) int{ 
